@@ -6,6 +6,6 @@ data:
 kind: ConfigMap
 metadata:
   labels:
-    app: tech-challenge-payment
-  name: tech-challenge-payment
+    app: payment-service
+  name: payment-service
   namespace: fiap
