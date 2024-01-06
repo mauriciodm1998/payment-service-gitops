@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: fiap
+  name: tech-challenge-payment
+  labels:
+    app: tech-challenge-payment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tech-challenge-payment
+  template:
+    metadata:
+      labels:
+        app: tech-challenge-payment
+    spec:
+      containers:
+        - name: payment-service
+          image: mauricio1998/tech-challenge-payment
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: tech-challenge-payment
+              subPath: config.yaml
+              mountPath: /app/config.yaml
+      volumes:
+        - name: tech-challenge-payment
+          configMap:
+            name: "tech-challenge-payment"
