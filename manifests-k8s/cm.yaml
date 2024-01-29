@@ -2,7 +2,12 @@ apiVersion: v1
 data:
   config.yaml: |
     server:
-      port: 8080
+      port: 3011
+      orderServiceHost: http://order-service.fiap.svc.cluster.local:3010
+    db:
+      connectionString: mongodb://root:password@payment-db.fiap.svc.cluster.local:27017/
+    token:
+      key: "dnVJWGFPSzRPcEpXQTl5U1gxVVRwSVdzaFhQcFA2bmVHS0dBNzI0RmF1WQ=="
 kind: ConfigMap
 metadata:
   labels:
