@@ -1,0 +1,7 @@
+server:
+  port: 8082
+  orderServiceHost: http://order-service.fiap.svc.cluster.local:3010
+db:
+  connectionString: mongodb://root:password@payment-db.fiap.svc.cluster.local:27017/
+token:
+  key: "dnVJWGFPSzRPcEpXQTl5U1gxVVRwSVdzaFhQcFA2bmVHS0dBNzI0RmF1WQ=="
