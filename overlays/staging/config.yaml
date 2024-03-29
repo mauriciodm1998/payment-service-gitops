@@ -1,7 +1,7 @@
 server:
-  port: 8082
-  orderServiceHost: http://order-service.fiap.svc.cluster.local:3010
-db:
-  connectionString: mongodb://root:password@payment-db.fiap.svc.cluster.local:27017/
-token:
-  key: "dnVJWGFPSzRPcEpXQTl5U1gxVVRwSVdzaFhQcFA2bmVHS0dBNzI0RmF1WQ=="
+  port: 8087
+sqs:
+  region: us-east-1
+  payment_cancelled_queue: https://sqs.us-east-1.amazonaws.com/851725660206/paymentcancelled
+  payment_payed_queue: https://sqs.us-east-1.amazonaws.com/851725660206/paymentpayed
+  payment_pending_queue: https://sqs.us-east-1.amazonaws.com/851725660206/paymentpending

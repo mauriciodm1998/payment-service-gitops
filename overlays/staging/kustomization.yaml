@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
 - ../../base
 
-namespace: hackaton
+namespace: tech-challenge
 
 configMapGenerator:
 - files:
@@ -16,20 +16,20 @@ patches:
 - patch: |-
     - op: replace
       path: /spec/ports/0/port
-      value: 8082
+      value: 8087
   target:
     kind: Service
 
 - patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/livenessProbe/httpGet/port
-      value: 8082
+      value: 8087
     - op: replace
       path: /spec/template/spec/containers/0/ports/0/containerPort
-      value: 8082
+      value: 8087
     - op: replace
       path: /spec/template/spec/containers/0/readinessProbe/httpGet/port
-      value: 8082
+      value: 8087
     - op: add
       path: /spec/template/spec/containers/0/envFrom
       value:
